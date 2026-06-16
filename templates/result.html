@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Fraud Detection Result</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            SecureShield
+
+        </div>
+
+        <div>
+
+            <a href="/">Home</a>
+
+            <a href="/dashboard">Dashboard</a>
+
+            <a href="/history">History</a>
+
+            <a href="/logout">Logout</a>
+
+        </div>
+
+    </nav>
+
+    <!-- Result Section -->
+
+    <section class="result-section">
+
+        <div class="result-card">
+
+            <div class="result-icon">
+
+                {% if fraud_status == "Fraud" %}
+
+                    <i class="fa-solid fa-triangle-exclamation danger-icon"></i>
+
+                {% else %}
+
+                    <i class="fa-solid fa-circle-check safe-icon"></i>
+
+                {% endif %}
+
+            </div>
+
+            <h1>Fraud Detection Result</h1>
+
+            <div class="result-details">
+
+                <div class="detail-box">
+
+                    <h3>Transaction Amount</h3>
+
+                    <p>₹{{ amount }}</p>
+
+                </div>
+
+                <div class="detail-box">
+
+                    <h3>Location & Time</h3>
+
+                    <p>{{ location_time }}</p>
+
+                </div>
+
+                <div class="detail-box">
+
+                    <h3>Risk Score</h3>
+
+                    <p>{{ risk_score }}%</p>
+
+                </div>
+
+            </div>
+
+            {% if fraud_status == "Fraud" %}
+
+                <div class="fraud-result">
+
+                    <i class="fa-solid fa-shield-virus"></i>
+
+                    Fraud Detected
+
+                </div>
+
+            {% else %}
+
+                <div class="safe-result">
+
+                    <i class="fa-solid fa-shield-check"></i>
+
+                    Safe Transaction
+
+                </div>
+
+            {% endif %}
+
+            <div class="result-buttons">
+
+                <a href="/dashboard" class="primary-btn">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back To Dashboard
+
+                </a>
+
+                <a href="/history" class="secondary-btn">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    View History
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

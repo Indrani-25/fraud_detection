@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fraud Detection Dashboard</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+```
+
+</head>
+
+<body>
+
+```
+<nav>
+
+    <a href="/">Home</a>
+
+    <a href="/register">Register</a>
+
+    <a href="/login">Login</a>
+
+    <a href="/dashboard">Dashboard</a>
+
+    <a href="/history">History</a>
+
+    <a href="/logout">Logout</a>
+
+</nav>
+
+<div class="dashboard-container">
+
+    <div class="dashboard-left">
+
+        <div class="main-card">
+
+            <h1>
+                <i class="fa-solid fa-shield-halved"></i>
+                Fraud Detection Dashboard
+            </h1>
+
+            <p class="subtitle">
+                Monitor and analyze suspicious financial transactions in real time.
+            </p>
+
+            <div class="account-info">
+
+                <h3>
+                    <i class="fa-solid fa-id-card"></i>
+                    Account Number:
+                    {{ user.account_number }}
+                </h3>
+
+                <h3>
+                    <i class="fa-solid fa-wallet"></i>
+                    Balance:
+                    ₹{{ user.balance }}
+                </h3>
+
+            </div>
+
+        </div>
+
+        <div class="transaction-card">
+
+            <h2>
+                <i class="fa-solid fa-paper-plane"></i>
+                Transfer Money
+            </h2>
+
+            <form action="/detect" method="POST">
+
+                <input
+                    type="text"
+                    name="receiver_account"
+                    placeholder="Receiver Account Number (ACC10005)"
+                    required
+                >
+
+                <input
+                    type="number"
+                    name="amount"
+                    placeholder="Transfer Amount"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="location"
+                    placeholder="Transaction Location"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="time"
+                    placeholder="Transaction Time (10AM)"
+                    required
+                >
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Transfer & Detect Fraud
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="dashboard-right">
+
+        <div class="status-card">
+
+            <i class="fa-solid fa-user-shield"></i>
+
+            <h3>Secure Monitoring</h3>
+
+            <p>
+                AI-powered transaction monitoring system.
+            </p>
+
+        </div>
+
+        <div class="status-card">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <h3>Risk Alerts</h3>
+
+            <p>
+                High-value transactions are flagged instantly.
+            </p>
+
+        </div>
+
+        <div class="status-card">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <h3>Analytics</h3>
+
+            <p>
+                Track and analyze transaction patterns securely.
+            </p>
+
+        </div>
+
+        <div class="status-card">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <h3>Database Security</h3>
+
+            <p>
+                Encrypted storage with MySQL backend integration.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+```
+
+</body>
+
+</html>

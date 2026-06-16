@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Secure Login</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <a href="/">Home</a>
+
+        <a href="/register">Register</a>
+
+        <a href="/login">Login</a>
+
+        <a href="/dashboard">Dashboard</a>
+
+    </nav>
+
+    <!-- Main Login Container -->
+
+    <div class="real-login-container">
+
+        <!-- Left Side -->
+
+        <div class="real-login-left">
+
+            <img
+            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            alt="secure login">
+
+            <h1>Secure Fraud Monitoring</h1>
+
+            <p>
+                Access your fraud detection dashboard securely and monitor
+                suspicious financial transactions in real time.
+            </p>
+
+        </div>
+
+        <!-- Right Side -->
+
+        <div class="real-login-right">
+
+            <div class="real-login-card">
+
+                <h2>User Login</h2>
+
+                <form method="POST">
+
+                    <!-- Email -->
+
+                    <div class="real-input-box">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter Email Address"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Password -->
+
+                    <div class="real-input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Enter Password"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Button -->
+
+                    <button type="submit">
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                        Secure Login
+
+                    </button>
+
+                </form>
+
+                <div class="real-bottom-text">
+
+                    New User?
+
+                    <a href="/register">Create Account</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

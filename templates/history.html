@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Transaction History</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            SecureShield
+
+        </div>
+
+        <div>
+
+            <a href="/">Home</a>
+
+            <a href="/dashboard">Dashboard</a>
+
+            <a href="/logout">Logout</a>
+
+        </div>
+
+    </nav>
+
+    <!-- Header -->
+
+    <section class="dashboard-header">
+
+        <div class="welcome-card">
+
+            <h1>
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                Transaction History
+
+            </h1>
+
+            <p>
+
+                View all fraud detection transactions performed by your account.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Statistics -->
+
+    <section class="dashboard-stats">
+
+        <div class="dashboard-stat-card">
+
+            <i class="fa-solid fa-money-bill-transfer"></i>
+
+            <h2>{{ transactions|length }}</h2>
+
+            <p>Total Transactions</p>
+
+        </div>
+
+        <div class="dashboard-stat-card">
+
+            <i class="fa-solid fa-shield"></i>
+
+            <h2>Secure</h2>
+
+            <p>Monitoring Active</p>
+
+        </div>
+
+    </section>
+
+    <!-- Table -->
+
+    <div class="history-container">
+
+        <div class="history-card">
+
+            <h2>
+
+                <i class="fa-solid fa-table"></i>
+
+                Transaction Records
+
+            </h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Amount</th>
+
+                        <th>Location & Time</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for row in transactions %}
+
+                    <tr>
+
+                        <td>{{ row.id }}</td>
+
+                        <td>₹{{ row.amount }}</td>
+
+                        <td>{{ row.location_time }}</td>
+
+                        <td>
+
+                            {% if row.fraud_status == "Fraudulent Transaction" %}
+
+                            <span class="fraud-badge">
+
+                                Fraud
+
+                            </span>
+
+                            {% else %}
+
+                            <span class="safe-badge">
+
+                                Safe
+
+                            </span>
+
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
