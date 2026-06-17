@@ -1082,3 +1082,100 @@ table tr:hover{
     margin-top:30px;
     flex-wrap:wrap;
 }
+.dashboard-stats{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin:30px auto;
+    width:90%;
+}
+
+.dashboard-stat-card{
+    background:white;
+    width:250px;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dashboard-stat-card i{
+    font-size:35px;
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.dashboard-stat-card h2{
+    color:#2563eb;
+    margin:10px 0;
+}
+
+.safe-badge{
+    background:#d4edda;
+    color:#28a745;
+    padding:8px 18px;
+    border-radius:20px;
+    font-weight:600;
+}
+
+.fraud-badge{
+    background:#f8d7da;
+    color:#dc3545;
+    padding:8px 18px;
+    border-radius:20px;
+    font-weight:600;
+}
+
+.suspicious-badge{
+    background:#fff3cd;
+    color:#ff9800;
+    padding:8px 18px;
+    border-radius:20px;
+    font-weight:600;
+}
+.history-navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:linear-gradient(135deg,#1e3a8a,#3b82f6);
+}
+
+.nav-links{
+    display:flex;
+    gap:15px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.logout-btn{
+    background:#ef4444;
+}
+
+.history-subtitle{
+    text-align:center;
+    margin-top:10px;
+    color:#555;
+}
+
+.dashboard-stats{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin:30px auto;
+}
+
+.dashboard-stat-card{
+    background:white;
+    width:250px;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
